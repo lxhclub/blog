@@ -20,7 +20,7 @@ import utils.DaoFactory;
 import utils.WebUtils;
 
 public class BusinessServiceImpl implements BusinessService {
-private CategoryDao categoryDao=DaoFactory.getInstance().createDao("dao.impl.CategoryDaoImpl", CategoryDao.class);
+private CategoryDao categoryDao=DaoFactory.getInstance().createDao("dao.impl.CategoryDaoImpl", CategoryDao.class);//反射直接获取分页逻辑的class
 private GoodsDao goodsDao=DaoFactory.getInstance().createDao("dao.impl.GoodsDaoImpl", GoodsDao.class);
 private UserDao userDao=DaoFactory.getInstance().createDao("dao.impl.UserDaoImpl", UserDao.class);
 private OrderDao  orderDao=DaoFactory.getInstance().createDao("dao.impl.OrderDaoImpl", OrderDao.class);
@@ -41,6 +41,7 @@ private OrderDao  orderDao=DaoFactory.getInstance().createDao("dao.impl.OrderDao
 		// TODO Auto-generated method stub
 		return  categoryDao.getAll();
 	}
+	//添加商品
 	public void addGoods(Goods goods){
 		goodsDao.add(goods);
 		
@@ -48,7 +49,7 @@ private OrderDao  orderDao=DaoFactory.getInstance().createDao("dao.impl.OrderDao
 	public Goods findGoods(String id){
 		return goodsDao.find(id);
 	}
-	
+	//分页查询
 public  Page getGoodsPageData(String pagenum){
 	int totalrecord=goodsDao.getTotalRecord();
 	Page page=null;
