@@ -26,7 +26,7 @@
     	
     	<tr>
     		<td>订单总价</td>
-    		<td colspan="3">${order.price }</td>
+    		<td colspan="3">${order.price }</td>		
     	</tr>
     	
     </table>

@@ -28,12 +28,6 @@
     		</td>
     	</tr>
     	<tr>
-    		<td>图片</td>
-    		<td>
-    			<input type="file" name="file">
-    		</td>
-    	</tr>
-    	<tr>
     		<td>商品描述</td>
     		<td>
     			<textarea rows="5" cols="40" name="description"></textarea>

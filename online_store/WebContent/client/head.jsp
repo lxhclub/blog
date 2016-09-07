@@ -8,12 +8,12 @@
   </head>
   
   <body style="text-align:center;">
-    <h1>佳佳零食小卖部</h1>
+    <h1>默认值零食小卖部</h1>
     <br/>
     <div>
 	    <a href="${pageContext.request.contextPath }/client/IndexServlet?method=getAll" target="body">首页</a>
 	    <a href="${pageContext.request.contextPath }/client/listcart.jsp" target="body">查看购物车</a>
-	    <a href="${pageContext.request.contextPath }/client/ClientListOrderServlet?userid=${user.id}" target="body"">查看订单</a>
+	    <a href="${pageContext.request.contextPath }/client/ClientListOrderServlet?userid=${user.id}" target="body">查看订单</a>
     </div>
     <div style="float:right;">
     	<c:if test="${user==null }"> 
