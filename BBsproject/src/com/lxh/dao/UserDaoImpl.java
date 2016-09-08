@@ -19,7 +19,6 @@ import com.lxh.entity.User;
  */
 public class UserDaoImpl implements UserDao {
 private Session session;
-@SuppressWarnings("unused")
 private Query query;
 private Transaction transaction;
 	
@@ -56,19 +55,12 @@ private Transaction transaction;
 	 * 查找用户
 	 */
 
-	@Override
-	public User findUser(int userId) {
-		// TODO Auto-generated method stub
-		session=HibernateSessionFactory.getSession();
-		User user=(User)session.get("com.lxh.entity.User", userId);
-		
-		session.close();
-		return user;
-	}
+	
 /**
  * 例句个人用户的问题
  * 
  */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Question> personalQuestion(User user, int pageNumber, int pageSize) {
 		List<Question> personalQuestion = new ArrayList<Question>();
@@ -102,6 +94,7 @@ private Transaction transaction;
 	 * 检查用户
 	 */
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public User judgeUser(User user) {
 		User user2 = null;
@@ -118,11 +111,59 @@ private Transaction transaction;
 		return user2;
 
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean judgeUserName(String userName) {
+		boolean flag = true;
+		session = HibernateSessionFactory.getSession();
+		String hql = "from User as user where user.userName = ?";
+		query = session.createQuery(hql);
+		query.setString(0, userName);
+		Iterator<User> iterator = query.list().iterator();
+		if(!iterator.hasNext()){
+			flag = false;
+		}
+		session.close();
+		return flag;
+	}
+	
+	public Question findQuestion(int questionId){
+		session = HibernateSessionFactory.getSession();
+		Question question = (Question) session.get("com.lxh.entity.Question", questionId);
+		session.close();
+		return question;
+	}
+
+	
+
+	@Override
+	public void saveQuestion(Question question) {
+		session = HibernateSessionFactory.getSession();
+		transaction = session.beginTransaction();
+		session.save(question);
+		transaction.commit();
+		session.close();
+		
+	}
+
+	@Override
+	public void deleteQuestion(Question question) {
+		session = HibernateSessionFactory.getSession();
+		transaction = session.beginTransaction();
+		session.delete(question);
+		transaction.commit();
+		session.close();
+	}
+	
+	
+	
 	/**
 	 * 分页,返回当前页数和总页数
 	 * 
 	 * */
-	public int[] pageNumber(int postAmount,String pageNumberStr,int pageSize){
+	/**分页,返回当前页数和总页数*/
+	public int[] pageNumber(int questionAmount,String pageNumberStr,int pageSize){
 		int[] paging = new int[2];
 		int pageNumber = 1;
 		pageNumber = Integer.parseInt(pageNumberStr);
@@ -130,8 +171,8 @@ private Transaction transaction;
 			pageNumber = 1;
 		}
 		int totalPage = 1;
-		if(postAmount > 0){
-			totalPage = postAmount%pageSize==0?(postAmount/pageSize):(postAmount/pageSize+1);
+		if(questionAmount > 0){
+			totalPage = questionAmount%pageSize==0?(questionAmount/pageSize):(questionAmount/pageSize+1);
 		}
 		if(pageNumber > totalPage){
 			pageNumber = totalPage;
@@ -140,5 +181,7 @@ private Transaction transaction;
 		paging[1] = totalPage;
 		return paging;
 	}
+
+	
 
 }

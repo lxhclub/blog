@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.lxh.entity.User" table="user" catalog="bbs">
+    <class name="com.lxh.entity.User" table="user"  catalog="bbs">
         <id name="userId" type="java.lang.Integer">
             <column name="userId" />
             <generator class="native" />

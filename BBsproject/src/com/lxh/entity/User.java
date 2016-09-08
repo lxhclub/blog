@@ -7,29 +7,33 @@ public class User implements java.io.Serializable {
 	private String userName;
 	private String userPassword;
 	private String userEmail;
-	private String userNikename;
+	private String userNickname;
 	private Timestamp userBirthday;
 	private Integer sex;
 	private Integer userPoints;
 	private String userRemark;
-	public User(String userName, String userPassword, String userEmail, String userNikename, Timestamp userBirthday,
+	
+	public User() {
+		
+	}
+	public User(String userName, String userPassword, String userEmail, String userNickname, Timestamp userBirthday,
 			Integer sex, Integer userPoints) {
 		super();
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.userEmail = userEmail;
-		this.userNikename = userNikename;
+		this.userNickname = userNickname;
 		this.userBirthday = userBirthday;
 		this.sex = sex;
 		this.userPoints = userPoints;
 	}
-	public User(String userName, String userPassword, String userEmail, String userNikename, Timestamp userBirthday,
+	public User(String userName, String userPassword, String userEmail, String userNickname, Timestamp userBirthday,
 			Integer sex, Integer userPoints, String userRemark) {
 		super();
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.userEmail = userEmail;
-		this.userNikename = userNikename;
+		this.userNickname = userNickname;
 		this.userBirthday = userBirthday;
 		this.sex = sex;
 		this.userPoints = userPoints;
@@ -59,11 +63,11 @@ public class User implements java.io.Serializable {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	public String getUserNikename() {
-		return userNikename;
+	public String getUserNickname() {
+		return userNickname;
 	}
-	public void setUserNikename(String userNikename) {
-		this.userNikename = userNikename;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
 	}
 	public Timestamp getUserBirthday() {
 		return userBirthday;

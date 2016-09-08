@@ -2,17 +2,27 @@ package com.lxh.entity;
 
 import java.sql.Timestamp;
 
+@SuppressWarnings("serial")
 public class Question implements java.io.Serializable {
 	private Integer questionId;
 	private User user;
-	private String totic;
+	private String topic;
 	private String matter;
 	private Timestamp postTime;
-	public Question(Integer questionId, User user, String totic, String matter, Timestamp postTime) {
+	
+	public Question() {
+		
+	}
+public Question(Integer questionId) {
+	this.questionId=questionId;
+	
+		
+	}
+	public Question(Integer questionId, User user, String topic, String matter, Timestamp postTime) {
 		super();
 		this.questionId = questionId;
 		this.user = user;
-		this.totic = totic;
+		this.topic = topic;
 		this.matter = matter;
 		this.postTime = postTime;
 	}
@@ -28,11 +38,11 @@ public class Question implements java.io.Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public String getTotic() {
-		return this.totic;
+	public String getTopic() {
+		return this.topic;
 	}
-	public void setTotic(String totic) {
-		this.totic = totic;
+	public void setTopic(String topic) {
+		this.topic = topic;
 	}
 	public String getMatter() {
 		return this.matter;
