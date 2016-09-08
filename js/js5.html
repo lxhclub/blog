@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<script>
+function checkForm(){
+
+	var username=document.getElementById("username");
+	if (username&&username.value==""){
+		username.focus();
+		alert("please input username");
+		return false;
+	}
+
+	var password=document.getElementById("password");
+	if (password&&password.value==""){
+		password.focus();
+		alert("please input password");
+		return false;
+	}
+	
+	var sal=document.getElementById("sal");
+	if (sal&&sal.value==""){
+		sal.focus();
+		alert("please input sal");
+		return false;
+	}
+	
+	var hiredate=document.getElementById("hiredate");
+	if (hiredate&&hiredate.value==""){
+		hiredate.focus();
+		alert("please input hiredate");
+		return false;
+	}
+
+	return true;
+
+
+}
+
+</script>
+
+</head>
+
+<body>
+<h3>Employee Regist</h3>
+
+<form onsubmit="return checkForm();">
+<table>
+<tr>
+<td>username</td>
+<td><input type="text"  id="username" name="username"/></td>
+</tr>
+
+<tr>
+<td>password</td>
+<td><input type="password" id="password" name="password"/></td>
+</tr>
+
+<tr>
+<td>sal</td>
+<td><input type="text" id="sal" name="sal"/></td>
+</tr>
+
+<tr>
+<td>hiredate</td>
+<td><input type="text" id="hiredate" name="hiredate"/></td>
+</tr>
+
+<tr>
+<td><input type="submit" name="btnSubmit" value="submit" /></td>
+<td><input type="reset" name="btnReset" value="reset"/></td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>

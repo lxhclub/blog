@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<script>
+
+function checkAll(){
+	
+	
+	//1.获取chkAll的选中状态checked
+		var chkAll=document.getElementById("chkAll");
+		
+		var chkAll1=document.getElementById("chkAll1");
+		var chkAll2=document.getElementById("chkAll2");
+		var chkAll3=document.getElementById("chkAll3");
+		var chkAll4=document.getElementById("chkAll4");
+	
+	//2、获取其他所有的checkbox
+	if(chkAll.checked==chkAll1.checked&&chkAll.checked==chkAll2.checked&&chkAll.checked==chkAll3.checked&&chkAll.checked==chkAll4.checked)
+	
+	return true;
+	
+	//3、将chkAll的选中状态于其他checkbox的选中状态同步
+}
+
+
+</script>
+
+
+</head>
+
+<body>
+
+<h3>Employee List Page</h3>
+
+<table width="300px" border="1px">
+
+<tr bgcolor="#009966">
+<td><input type="checkbox" id="chkAll" onclick="checkAll()"/></td>
+<td>ename</td>
+<td>job</td>
+<td>sal</td>
+<td>dept</td>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="chkAll1"  /></td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+</tr>
+
+<tr>
+<td><input type="checkbox"  id="chkAll2" /></td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+</tr>
+
+<tr>
+<td><input type="checkbox"  id="chkAll3" /></td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+</tr>
+
+<tr>
+<td><input type="checkbox" id="chkAll4"  /></td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+<td>xxxxxxxxxx</td>
+</tr>
+
+</table>
+
+
+</body>
+</html>
