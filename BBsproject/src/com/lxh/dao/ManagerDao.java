@@ -12,5 +12,6 @@ public interface ManagerDao {
 	 public List<Question> allQuestion(int pageNumber ,int pageSize);
 	 public User findUser(int userId);
 	 public void deleteQuestion(Question question);
+	 public void saveManager(Manager manager) ;
 	 
 }

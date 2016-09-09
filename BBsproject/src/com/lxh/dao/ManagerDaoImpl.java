@@ -36,6 +36,15 @@ public class ManagerDaoImpl extends UserDaoImpl implements ManagerDao {
 		session.close();
 		return manager2;
 	}
+	@Override
+	public void saveManager(Manager manager) {
+		session=HibernateSessionFactory.getSession();
+		transaction=session.beginTransaction();
+		session.save(manager);
+		transaction.commit();
+		session.close();
+		
+	}
 
 	
 
@@ -53,6 +62,7 @@ public class ManagerDaoImpl extends UserDaoImpl implements ManagerDao {
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Question> allQuestion(int pageNumber, int pageSize) {
 		session = HibernateSessionFactory.getSession();

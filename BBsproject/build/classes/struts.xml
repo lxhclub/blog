@@ -1,0 +1,88 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="gb2312"/>
+	
+	<package name="default" extends="struts-default">
+		<interceptors>
+			<interceptor name="loginCheck" class="interceptor.LoginCheck"></interceptor>
+			<interceptor name="managerLoginCheck" class="interceptor.ManagerLoginCheck"></interceptor>
+		</interceptors>
+		<global-results>
+			<result name="error" type="redirect">/error.html</result>
+		</global-results>
+		<action name="allQuestionAction" class="com.lxh.action.AllQuestionAction">
+			<result name="success">/allQuestion.jsp</result>
+		</action>
+		<action name="addQuestionAction" class="com.lxh.action.AddQuestionAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="input">/newQuestion.jsp</result>
+			<result name="fail">/newQuestion.jsp</result>
+			<result name="success" type="redirect">/newQuestion.jsp</result>
+		</action>
+		<action name="deleteQuestionAction" class="com.lxh.action.DeleteQuestionAction">
+			<interceptor-ref name="managerLoginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="redirect">/com/lxh/action/allQuestionAction.action?pageNumber=${pageNumber}</result>
+		</action>
+		<action name="deleteMyQuestionAction" class="com.lxh.action.DeleteMyQuestionAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="redirect">/com/lxh/action/personalQuestionAction.action?pageNumber=${pageNumber}</result>
+		</action>
+		<action name="loginAction" class="com.lxh.action.LoginAction">
+			<result name="input">/login.jsp</result>
+			<result name="success" type="redirect">/com/lxh/action/allQuestionAction.action</result>
+		</action>
+		<action name="managerLoginAction" class="com.lxh.action.ManagerLoginAction">
+			<result name="input">/managerLogin.jsp</result>
+			<result name="success" type="redirect">/com/lxh/action/allQuestionAction.action</result>
+		</action>
+		<action name="enrollAction" class="com.lxh.action.EnrollAction">
+			<result name="input">/enroll.jsp</result>
+			<result name="success">/login.jsp</result>
+		</action>
+		<action name="questionMatterAction" class="com.lxh.action.QuestionMatterAction">
+			<result name="success">/questionMatter.jsp</result>
+		</action>
+		<action name="personalInformationAction" class="com.lxh.action.PersonalInformationAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="fail" type="redirect">/com/lxh/action/allQuestionAction.action</result>
+			<result name="success" type="redirect">/myInformation.jsp</result>
+		</action>
+		<action name="userInformationAction" class="com.lxh.action.UserInformationAction">
+			<result name="success">/userInformation.jsp</result>
+		</action>
+		<action name="personalManageAction" class="com.lxh.action.PersonalManageAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="fail" type="redirect">/com/lxh/action/allQuestionAction.action</result>
+			<result name="input">/myInformation.jsp</result>
+			<result name="success" type="redirect">/com/lxh/action/personalInformationAction.action</result>
+		</action>
+		<action name="updatePasswordAction" class="com.lxh.action.UpdatePasswordAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="fail" type="redirect">/com/lxh/action/allQuestionAction.action</result>
+			<result name="input">/updatePassword.jsp</result>
+			<result name="success" type="redirect">/com/lxh/action/personalInformationAction.action</result>
+		</action>
+		<action name="personalQuestionAction" class="com.lxh.action.PersonalQuestionAction">
+			<interceptor-ref name="loginCheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>		
+			<result name="fail" type="redirect">/com/lxh/action/allQuestionAction.action</result>
+			<result name="success">/myQuestion.jsp</result>
+		</action>
+		<action name="userExitAction" class="com.lxh.action.ExitAction" method="userExit">
+			<result name="success" type="redirect">/com/lxh/action/allQuestionAction.action</result>
+		</action>
+		<action name="managerExitAction" class="com.lxh.action.ExitAction" method="managerExit">
+			<result name="success" type="redirect">/com/lxh/action/allQuestionAction.action</result>
+		</action>
+	</package>
+</struts>
+
+

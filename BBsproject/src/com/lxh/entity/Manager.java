@@ -4,6 +4,10 @@ public class Manager implements java.io.Serializable {
 	private Integer managerId;
 	private String managerName;
 	private String managerPassword;
+	
+	public Manager() {
+		
+	}
 	public Manager(String managerName, String managerPassword) {
 		super();
 		this.managerName = managerName;

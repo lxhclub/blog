@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.lxh.config.HibernateSessionFactory;
+import com.lxh.entity.Manager;
 import com.lxh.entity.Question;
 import com.lxh.entity.User;
 /**
@@ -127,7 +128,7 @@ private Transaction transaction;
 		session.close();
 		return flag;
 	}
-	
+	@Override
 	public Question findQuestion(int questionId){
 		session = HibernateSessionFactory.getSession();
 		Question question = (Question) session.get("com.lxh.entity.Question", questionId);
@@ -181,7 +182,7 @@ private Transaction transaction;
 		paging[1] = totalPage;
 		return paging;
 	}
-
+	
 	
 
 }
