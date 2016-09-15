@@ -21,7 +21,7 @@ public class JdbcUtil {
 		}
 	}
 		
-	public static Connection getConnection() throws SQLException {
+	public Connection getConnection() throws SQLException {
 		conn =DriverManager.getConnection(url, user, password);
 		return conn;
 	}
@@ -72,13 +72,13 @@ public class JdbcUtil {
 		}
 	}
 
-	public void closeAll(Connection conn, Statement sta) {
+	public void closeAll(Statement stm, ResultSet rs) {
 		try {
-			if (conn != null) {
-				conn.close();
+			if (stm != null) {
+				stm.close();
 			}
-			if (sta != null) {
-				sta.close();
+			if (rs != null) {
+				rs.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -117,7 +117,7 @@ public class JdbcUtil {
 	
 	
 
-	public static void free(Connection conn) {
+	public void free(Connection conn) {
 		try {
 			if (conn != null) {
 				conn.close();
@@ -126,6 +126,22 @@ public class JdbcUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void closeAll(Connection conn, Statement stm) {
+		// TODO Auto-generated method stub
+		try {
+			if (conn != null) {
+				conn.close();
+			}
+			if (stm != null) {
+				stm.close();
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

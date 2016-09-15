@@ -4,12 +4,12 @@ import java.sql.Timestamp;
 
 public class Replay {
 	
-	private int replayId; // 鍥炲ID
-	private String replayCode;// 鍥炲鑰呬唬鐮?
-	private String replayIp;// 鍥炲鑰卛p
-	private int oId;// 涓婚顣絀d
-	private Timestamp replayTime;//鍥炲鏃堕棿
-	private String remark;//澶囨敞
+	private int replayId; // 回复者ID
+	private String replayCode;// 回复形式
+	private String replayIp;// 回复者ip
+	private int oId;// 主题id
+	private Timestamp replayTime;//回复时间
+	private String remark;//备忘录
 	public int getReplayId() {
 		return replayId;
 	}

@@ -5,14 +5,14 @@ import java.security.MessageDigest;
 public class MD5Util {
 
 	/**
-	 * 密码加密
+	 * 
 	 * @param inStr
 	 * @return
 	 * @throws Exception
 	 */
 	public static String MD5Encrypt(String inStr) throws Exception {
-		MessageDigest md = MessageDigest.getInstance("MD5"); // 可以选中其他的算法如SHA
-		byte[] digest = md.digest(inStr.getBytes()); // 返回的是byet[]，要转化为String存储比较方便
+		MessageDigest md = MessageDigest.getInstance("MD5"); 
+		byte[] digest = md.digest(inStr.getBytes()); 
 		String outStr = byteToString(digest);
 		return outStr;
 	}
@@ -29,7 +29,7 @@ public class MD5Util {
 		StringBuffer sb = new StringBuffer("");
 		for (int i = 1; i < digest.length; i++) {
 			tempStr = (Integer.toHexString(digest[i] & 0xff));
-			if (tempStr.length() == 1) {
+			if (tempStr.length()== 1) {
 				sb.append("0");
 				sb.append(tempStr);
 			} else {
