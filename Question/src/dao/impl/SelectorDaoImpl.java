@@ -19,7 +19,7 @@ public class SelectorDaoImpl implements SelectorDao {
 			Statement stm = null;
 			ResultSet rs = null;
 			List selList=new LinkedList();
-			String sql = "select qseq,selseq,conntent from wj_selecter where qseq = '"
+			String sql = "select qseq,selseq,content from selecter where qseq = '"
 					+ seq + "' and oid = '" + oid + "' order by selseq asc";
 			 System.out.println(sql);
 			try {
@@ -31,7 +31,7 @@ public class SelectorDaoImpl implements SelectorDao {
 					Selecter sel=new Selecter();
 					int qseq=rs.getInt("qseq");
 					int selseq=rs.getInt("selseq"); 
-					String conntent=rs.getString("conntent");
+					String conntent=rs.getString("content");
 					sel.setQseq(qseq);
 					sel.setSelseq(selseq);
 					sel.setContent(conntent);
@@ -49,17 +49,17 @@ public class SelectorDaoImpl implements SelectorDao {
 
 
 		@Override
-		public int addSelecter(int oid, int seq, String conntent, int seq_selecter) {
+		public int addSelecter(int oid, int seq, String content, int seq_selecter) {
 			JdbcUtil jdbcutil=null;
 			Connection conn = null;
 			Statement stm = null;
 			ResultSet rs = null;
-			String sql = "insert into wj_selecter(oid,qseq,connntent,selseq) values('"
+			String sql = "insert into selecter(oid,qseq,content,selseq) values('"
 					+ oid
 					+ "','"
 					+ seq
 					+ "','"
-					+ conntent
+					+ content
 					+ "','"
 					+ seq_selecter
 					+ "')";
@@ -85,7 +85,7 @@ public class SelectorDaoImpl implements SelectorDao {
 			Connection con = null;
 			Statement stm = null;
 			ResultSet rs = null;
-			String sql = "update wj_selecter set qseq=(qseq+1) where oid = '" + oid
+			String sql = "update selecter set qseq=(qseq+1) where oid = '" + oid
 					+ "'and qseq > '" + qseq + "'";
 			System.out.println(sql);
 			try {
@@ -113,7 +113,7 @@ public class SelectorDaoImpl implements SelectorDao {
 			Connection con = null;
 			Statement stm = null;
 			ResultSet rs = null;
-			String sql = "delete from wj_selecter where oid=" + oid + " and qseq="
+			String sql = "delete from selecter where oid=" + oid + " and qseq="
 					+ seq ;
 			int count=0;
 			System.out.println(sql);
@@ -142,7 +142,7 @@ public class SelectorDaoImpl implements SelectorDao {
 			Statement stm = null;
 			ResultSet rs = null;
 			int count=0;
-			String sql = "update wj_selecter set qseq=(qseq-1) where oid = " + oid
+			String sql = "update selecter set qseq=(qseq-1) where oid = " + oid
 					+ " and qseq > " + seq ;
 			System.out.print(sql);
 			try {

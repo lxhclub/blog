@@ -23,6 +23,8 @@ public class WjUpdateServlet extends HttpServlet {
 		public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			ObjectsService obs=new ObjectsServiceImpl();
 			Objects bean = new Objects();
+			request.setCharacterEncoding("GBK");
+			response.setCharacterEncoding("GBK");
 			String getid = request.getParameter("oid");
 			int oid = Integer.parseInt(getid.trim());
 			String title = request.getParameter("title");

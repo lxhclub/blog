@@ -88,4 +88,17 @@ web.WjDelServlet
 <servlet-name>wjDelServlet</servlet-name>
 <url-pattern>/WjDelServlet</url-pattern>
 </servlet-mapping>
+
+<servlet>
+<servlet-name>newQuesServlet</servlet-name>
+<servlet-class>
+web.question.NewQuesServlet
+</servlet-class>
+<load-on-startup>22</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>newQuesServlet</servlet-name>
+<url-pattern>/NewQuesServlet</url-pattern>
+</servlet-mapping>
+
 </web-app>
