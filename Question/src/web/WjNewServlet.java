@@ -47,13 +47,15 @@ public class WjNewServlet extends HttpServlet {
 	}
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		ObjectsService obs=new ObjectsServiceImpl();
 		FileUtil fu=new FileUtil();
 		Objects ob = new Objects();
-		String title = request.getParameter("title");
+		String title= request.getParameter("title");
 		String discribe = request.getParameter("discribe");
 		String anonymousFlag = request.getParameter("anonymousFlag");
-		String remark = request.getParameter("remark");
+		String remark  = request.getParameter("remark");
 		ob.setTitle(title);
 		ob.setDiscribe(discribe);
 		ob.setAnonymousFlag(anonymousFlag);

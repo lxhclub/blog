@@ -35,6 +35,8 @@ public class AddQueServlet extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		String id=request.getParameter("oid");
 		int oid = Integer.parseInt(id);
 		String seq=request.getParameter("seq");
@@ -97,7 +99,7 @@ public class AddQueServlet extends HttpServlet {
 				}
 			}
 		}
-		response.sendRedirect("./question/quesList.jsp?oid="+ oid);
+		response.sendRedirect("./quesList.jsp?oid="+ oid);
 
 		
 	}

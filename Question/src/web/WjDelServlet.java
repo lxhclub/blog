@@ -20,6 +20,7 @@ public class WjDelServlet extends HttpServlet {
 	}
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ObjectsService objectsService=new ObjectsServiceImpl();
 		String getid = request.getParameter("oid");
 		int oid = Integer.parseInt(getid.trim());

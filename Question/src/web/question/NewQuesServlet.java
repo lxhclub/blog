@@ -32,6 +32,8 @@ public class NewQuesServlet extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("oid");
 		System.out.println("id="+id);
 		int oid = Integer.parseInt(id);

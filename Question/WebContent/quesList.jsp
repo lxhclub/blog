@@ -27,7 +27,7 @@
 <script type="text/javascript">
 //新建题目
 function newQues() {
-	window.self.location="./question/newQues.jsp?oid="+<%=oid%>;
+	window.self.location="./newQues.jsp?oid="+<%=oid%>;
 }
 
 //新建题目
@@ -128,9 +128,9 @@ function back() {
 					<td>
 						<br/>
 						<a
-							href="question/addQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">插入题目</a>
+							href="./addQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">插入题目</a>
 						<a
-							href="question/updateQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">编辑题目</a>
+							href="./updateQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">编辑题目</a>
 						<a onclick="delQues(<%=ques.getSeq()%>);" href="#">删除题目</a>
 						<br />
 					</td>
@@ -171,9 +171,9 @@ function back() {
 					<td>
 						<br/>
 						<a
-							href="question/addQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">插入题目</a>
+							href="./addQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">插入题目</a>
 						<a
-							href="question/updateQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">编辑题目</a>
+							href="./updateQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">编辑题目</a>
 		      		<a onclick="delQues(<%=ques.getSeq()%>);" href="#">删除题目</a>
 						<br />
 					</td>
@@ -205,9 +205,9 @@ function back() {
 					<td>
 						<br/>
 						<a
-							href="/question/addQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">插入题目</a>
+							href="./addQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">插入题目</a>
 						<a
-							href="/question/updateQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">编辑题目</a>
+							href="./updateQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">编辑题目</a>
 						<a onclick="delQues(<%=ques.getSeq()%>);" href="#">删除题目</a>
 						<br />
 					</td>
@@ -231,9 +231,9 @@ function back() {
 					<td>
 						<br/>
 						<a
-							href="question/addQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">插入题目</a>
+							href="./addQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">插入题目</a>
 						<a
-							href="question/updateQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">编辑题目</a>
+							href="./updateQues.jsp?oid=<%=oid%>&seq=<%=ques.getSeq()%>">编辑题目</a>
 						<a onclick="delQues(<%=ques.getSeq()%>);" href="#">删除题目</a>
 						<br />
 					</td>
