@@ -137,10 +137,10 @@ a:link,a:visited {
 }
 </style>
 </head>
-<body bgColor='#ffffff'>
-<table width="100%" border="0" cellpadding="0" cellspacing="0" background="skin/images/frame/topbg.gif">
+<body >
+<table width="100%" border="0" cellpadding="0" cellspacing="0" background="image/bg.jpg">
   <tr>
-    <td width='20%' height="60"><img src="skin/images/frame/logo.gif" /></td>
+    <td width='20%' height="60"><img src="image/logo.jpg" /></td>
     <td width='80%' align="right" valign="bottom">
     	<table width="750" border="0" cellspacing="0" cellpadding="0">
       <tr>

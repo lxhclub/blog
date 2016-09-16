@@ -157,7 +157,7 @@ function Delete_onClick()
 	 var status = pkValue.split(",")[1];
 	 if(confirm("您确实要删除该问卷吗？删除该问卷将删除与之相关的题目\n\n信息，回答信息等，删除后，不能再恢复，请慎重。"))
 	  {
-		 window.self.location="./wjDelAction.jsp?oid="+topicCode;
+		 window.location.href="WjDelServlet?oid="+topicCode;
 	  }
    }
 }

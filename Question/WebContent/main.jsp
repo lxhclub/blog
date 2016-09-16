@@ -11,7 +11,7 @@
 <body leftmargin="8" topmargin='8'>
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td><div style='float:left'> <img height="14" src="skin/images/frame/book1.gif" width="20" />&nbsp;欢迎使用内容管理系统! </div>
+    <td><div style='float:left'> <img height="14" src="image/book1.gif" width="20" />&nbsp;欢迎使用内容管理系统! </div>
       <div style='float:right;padding-right:8px;'>
         <!--  //保留接口  -->
         <span id="clock"></span>

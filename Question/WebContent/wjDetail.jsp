@@ -1,7 +1,21 @@
-﻿<%@page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+﻿<%@page import="dao.impl.ObjectsDaoImpl"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@include file="check.jsp"%>
-<%@page import="service.impl.*"%>
+<%@page import="entity.Objects"%>
 <%@page import="service.*"%>
+<%@page import="util.*"%>
+<%@page import="service.impl.*"%>
+<%
+   Func func=new Func();
+   //ObjectBean ob = (ObjectBean)request.getAttribute("objectBean");
+    String oid = request.getParameter("oid");
+    int id = Integer.parseInt(oid);
+    ObjectsService objectsService=new ObjectsServiceImpl();
+    Objects ob = objectsService.findObjectsByID(id);
+    String doType = "detail";
+    String isReadOnly = "";
+    if(doType.equals("detail")) isReadOnly="disabled";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -9,10 +23,13 @@
 		<title>问卷管理系统</title>
 		<link type="text/css" rel="stylesheet" href="/vote/view/css/main.css" />
 <script type="text/javascript">
+var action = "<%=request.getContextPath()%>"+"/servlet/ObjectServlet";
 //提交
 function sbmOK(){
 	if (chkForm()) {
+		document.fm.action = action;
 		document.fm.submit();
+		return;
 	}
  }
 
@@ -40,8 +57,10 @@ function cancel(){
 </script>
 	</head>
 	<body leftmargin="8" topmargin="8">
-		<form action="WjNewServlet" name="fm" method="post">
+		<form action="" name="fm" method="post">
 		<input type="hidden" name="createUser" value="<%=session.getAttribute("userName")%>" />
+		<input type="hidden" name="doType" value="<%=doType%>" />
+		<input type="hidden" name="oid" value="<%=ob.getOid()%>" />
 		<table width="100%" align="center" class="table">
 				<tbody>
 					<tr>
@@ -49,7 +68,7 @@ function cancel(){
 					</tr>
 					<tr>
 						<td align="center">
-							新建问卷<br/>
+							问卷查看<br/>
 						</td>
 					</tr>
 				</tbody>
@@ -61,7 +80,7 @@ function cancel(){
 					</td>
 					<td>
 						&nbsp;
-						<input type="text" name="title" style="width:350px" />
+						<input type="text" name="title" style="width:350px" value="<%= func.getString(ob.getTitle())%>" <%=isReadOnly%>/>
 					</td>
 				</tr>
 				<tr>
@@ -70,7 +89,7 @@ function cancel(){
 					</td>
 					<td>
 						&nbsp;
-						<textarea name="discribe" cols="100" rows="15" ></textarea>
+						<textarea name="discribe" cols="100" rows="15" <%=isReadOnly%>><%= func.getString(ob.getDiscribe())%></textarea>
 					</td>
 				</tr>
 				<tr>
@@ -78,8 +97,8 @@ function cancel(){
 						是否匿名：
 					</td>
 					<td>
-						是<input name="anonymousFlag" type="radio" value="1" checked/>&nbsp;&nbsp;
-                                                                否<input name="anonymousFlag" type="radio" value="0" />
+						是<input name="anonymousFlag" type="radio" value="1" <%if("1".equals(Func.getString(ob.getAnonymousFlag()))){%>checked<%}%> <%=isReadOnly%>/>&nbsp;&nbsp;
+                                                                否<input name="anonymousFlag" type="radio" value="0" <%if("0".equals(func.getString(ob.getAnonymousFlag()))){%>checked<%}%> <%=isReadOnly%>/>
 					</td>
 				</tr>
 				<tr>
@@ -90,9 +109,11 @@ function cancel(){
 					</td>
 					<td>
 						&nbsp;
-						<input type='button'   onClick="sbmOK();" value=' 确     定 ' />
+						<%if(!doType.equals("detail")){ %>
+						<input type='button' class="coolbg np" onClick="sbmOK();" value=' 确     定 ' />
+						<%}%>
 						&nbsp;&nbsp;
-						<input type="button"   onclick="cancel()" value=" 取    消 " />
+						<input type="button" class="coolbg np" onclick="cancel()" value=" 取    消 " />
 					</td>
 				</tr>
 			</table>
