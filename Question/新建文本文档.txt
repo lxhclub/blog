@@ -1,0 +1,9 @@
+管理员登陆
+admin
+admin
+登陆页面 localhost:8080/Question/login.jsp
+前端页面为 http://localhost:8080/Question/preview.jsp?oid=26
+
+系统技术分布
+使用了jsp+javabean+md5完成了简单的在线投票功能
+使用了jfree柱形显示结果

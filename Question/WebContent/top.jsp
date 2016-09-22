@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>top</title>
-<link href="skin/css/base.css" rel="stylesheet" type="text/css"/>
+<link href="css/base.css" rel="stylesheet" type="text/css"/>
 <script language='javascript'>
 var preFrameW = '206,*';
 var FrameHide = 0;
@@ -80,7 +80,7 @@ body { padding:0px; margin:0px; }
 div.item
 {
   text-align:center;
-	background:url(skin/images/frame/topitembg.gif) 0px 3px no-repeat;
+	background: 0px 3px no-repeat;
 	width:82px;
 	height:26px;
 	line-height:28px;
@@ -133,7 +133,7 @@ a:link,a:visited {
 
 .rmain {
   padding-left:10px;
-  /* background:url(skin/images/frame/toprightbg.gif) no-repeat; */
+ 
 }
 </style>
 </head>
@@ -147,7 +147,7 @@ a:link,a:visited {
       <td align="right" height="60" style="padding-right:10px;line-height:26px;">
         	您好，<span class="username"><%=session.getAttribute("userName") %></span>，欢迎使用内容管理系统！
         	[<a href="./modifyPsw.jsp" target="main" >修改密码</a>]
-        	[<a href="user/exit.jsp" target="_top">注销退出</a>]&nbsp;
+        	[<a href="exit.jsp" target="_top">注销退出</a>]&nbsp;
       </td>
       </tr>
     </table></td>

@@ -23,13 +23,7 @@
                 <div class='flrct'> <a href='./wjNew.jsp' target='main'><img src='image/gtk-sadd.png' alt='创建问卷' title='创建问卷'/></a> </div>
               </div>
             </li>
-             <li>
-              <div class='items'>
-                <div class='fllct'><a href='./wjpost.jsp' target='main'>问卷调查</a></div>
-                <div class='flrct'> <a href='./preview.jsp' target='main'><img src='image/gtk-sadd.png' alt='问卷调查' title='问卷调查'/></a> </div>
-              </div>
-            </li>
-            
+             
             <%--
             <li><a href='archives.html' target='main'>所有列表</a> </li>
             <li>

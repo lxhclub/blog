@@ -1,19 +1,20 @@
 package entity;
 public class Answer {
 	
-	private int answerId;
+	private int answerId;//回复者id
 	
-	private int replayId;
+	private int replayId;//回复者id
 	
-	private int oid;
+	private int oid;//主题id
 	
-	private int qSeq;
+	private int qSeq;//问题选项大小
+
 	
-	private int seSeq;
+	private int seSeq;//选择的选项
 	
-	private String seValue;
+	private String seValue;//选项的value值
 	
-	private String remark;
+	private String remark;//备忘录
 
 	public int getAnswerId() {
 		return answerId;

@@ -17,7 +17,7 @@
       </div></td>
   </tr>
   <tr>
-    <td height="1" background="skin/images/frame/sp_bg.gif" style='padding:0px'></td>
+    <td height="1"  style='padding:0px'></td>
   </tr>
 </table>
 <SCRIPT type=text/javascript>

@@ -23,7 +23,7 @@ a:active {color: #09797b;}
 </head>
 <body style="text-align:center">
 <div style="width:50%;margin:0 auto;margin-top:15%;">
-<div style="font-weight:bold;background:url(images/tishi_title_bg.gif) repeat-x;height:32px;">
+<div style="font-weight:bold; repeat-x;height:32px;">
 <div style="background:url(images/corner2.gif) no-repeat;width:4px;float:right;height:32px;"></div>
 <div style="background:url(images/corner1.gif) no-repeat;width:100px;height:23px;padding:9px 0 0 10px;text-align:center;"></div></div>
 <div style="background:#fff;border-left:1px solid #b5e1d6;border-right:1px solid #b5e1d6;text-align:center;height:120px;padding-top:20px;"><span style="font-size:18px;font-family:黑体;">信息提示</span>
